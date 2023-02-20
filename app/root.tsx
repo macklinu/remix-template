@@ -1,4 +1,4 @@
-import type { LinksFunction, MetaFunction } from '@remix-run/node'
+import type { LinksFunction, V2_MetaFunction } from '@remix-run/node'
 import {
   Links,
   LiveReload,
@@ -9,11 +9,11 @@ import {
 } from '@remix-run/react'
 import tailwind from '~/tailwind.css'
 
-export const meta: MetaFunction = () => ({
-  charset: 'utf-8',
-  title: 'New Remix App',
-  viewport: 'width=device-width,initial-scale=1',
-})
+export const meta: V2_MetaFunction = () => [
+  { charSet: 'utf-8' },
+  { title: 'New Remix App' },
+  { property: 'viewport', content: 'width=device-width,initial-scale=1' },
+]
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
